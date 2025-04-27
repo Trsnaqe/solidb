@@ -1,0 +1,56 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Build directory
+build/
+cmake-build-debug/
+cmake-build-release/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*~
+
+# Database files created while testing
+*.db
+*.tbl
+*.txlog
+
+# Ignore all automatically created database directories
+# but keep any manually created example databases
+/*/
+!/docs/
+!/include/
+!/src/
+!/tests/
