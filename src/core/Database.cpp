@@ -13,6 +13,14 @@ Database::Database(const std::string& name) : name_(name) {
     fs::create_directories(name);
 }
 
+Database::~Database() {
+    try {
+        checkpoint();
+    } catch (const std::exception& e) {
+        std::cerr << "Error during database cleanup: " << e.what() << std::endl;
+    }
+}
+
 bool Database::createTable(const std::string& tableName, 
                           const std::vector<core::ColumnDef>& columns) {
     if (tables_.find(tableName) != tables_.end()) {

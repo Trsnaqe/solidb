@@ -25,9 +25,17 @@ public:
     bool tableExists(const std::string& name) const;
     std::vector<std::string> getTableNames() const;
     
+    bool insert(const std::string& tableName, const std::vector<std::string>& values);
+    std::vector<std::vector<std::string>> select(
+        const std::string& tableName, 
+        const std::vector<std::string>& columns,
+        const std::string& whereCondition = "");
+    
     bool loadFromFile();
     bool saveToFile() const;
     bool checkpoint() const;
+    
+    static std::unique_ptr<Database> loadFromFile(const std::string& name);
     
     void logOperation(const std::string& operation);
     std::string getName() const;
